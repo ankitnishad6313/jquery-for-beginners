@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        min-height: 200px;
+        width: 600px;
+        padding: 20px;
+        border: 1px double teal;
+        margin: 0px 10px;
+      }
+      #box2 {
+        height: 200px;
+        width: 600px;
+        padding: 20px;
+        border: 1px double red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>jQuery wrap() & unwrap() Methods</h2>
+
+    <div id="box">
+      <h2>H2 Heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab! dfcgvbhjnkl
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+    </div>
+
+    <button id="wrap">wrap</button>
+    <button id="unwrap">unwrap</button>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#wrap").click(function () {
+          $('h2').wrap('<div id="box2"></div>')
+        });
+        $("#unwrap").click(function () {
+          $('h2').unwrap();
+        });
+      });
+    </script>
+  </body>
+</html>

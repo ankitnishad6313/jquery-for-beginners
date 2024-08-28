@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-center">
+          jQuery fadeIn, fadeOut, fadeToggle and fadeTo Method
+        </h2>
+        <div id="box" class="border border-2 border-primary">
+          <h2>This is a Heading</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nihil
+            eum incidunt! Adipisci laboriosam, numquam necessitatibus
+            praesentium fuga debitis provident natus fugiat unde totam
+            voluptatem cupiditate quis dolores ratione animi.
+          </p>
+        </div>
+      </div>
+      <div class="row g-5">
+        <button class="btn btn-dark w-25 mx-2" id="fadeIn">Fade In</button>
+        <button class="btn btn-dark w-25 mx-2" id="fadeOut">Fade Out</button>
+        <button class="btn btn-dark w-25 mx-2" id="fadeToggle">Fade Toggle</button>
+        <button class="btn btn-dark w-25 mx-2" id="fadeTo">Fade To</button>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#fadeIn').click(function(){
+            // $('#box').fadeIn("slow");
+            // $('#box').fadeIn("fast");
+            $('#box').fadeIn(3000, function(){
+                console.log('Box is visible now');
+            });
+        });
+        $('#fadeOut').click(function(){
+            // $('#box').fadeOut("slow");
+            // $('#box').fadeOut("fast");
+            $('#box').fadeOut(3000, function(){
+                console.log('Box is hidden now');
+            });
+        });
+        $('#fadeToggle').click(function(){
+            // $('#box').fadeToggle("slow");
+            // $('#box').fadeToggle("fast");
+            $('#box').fadeToggle(3000, function(){
+                console.log('Operation completed.');
+            });
+        });
+        $('#fadeTo').click(function(){
+            $('#box').fadeTo("fast", 0.5, function(){
+                console.log('Operation completed.');
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

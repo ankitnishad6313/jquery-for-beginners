@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-4">
+        <h2 class="text-center">
+          jQuery Method Chaining
+        </h2>
+        <div id="box" class="border border-2 border-primary position-relative">
+          <h2>This is a Heading</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nihil
+            eum incidunt! Adipisci laboriosam, numquam necessitatibus
+            praesentium fuga debitis provident natus fugiat unde totam
+            voluptatem cupiditate quis dolores ratione animi.
+          </p>
+        </div>
+      </div>
+      <div class="row g-2">
+        <button class="btn btn-dark w-25 mx-2" id="method-chaning">Chaning Method</button>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#method-chaning').click(function(){
+            $('#box').slideUp(3000).slideDown(2500).css({'background-color' : 'black', 'color' : 'white'});
+        });
+      });
+    </script>
+  </body>
+</html>

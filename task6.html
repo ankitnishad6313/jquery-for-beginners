@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+        appearance: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+        <h2 class="text-center">Number Swaping with using 3<sup>rd</sup> Variable</h2>
+      <div class="col-lg-8 mx-auto">
+        <form action="" id="test-form" method="post" class="row g-3">
+          <div class="col-12 col-lg-4">
+            <input
+              type="number"
+              class="form-control"
+              name="num_1"
+              id="num_1"
+              placeholder="Number 1"
+            />
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <button type="submit" class="btn btn-outline-danger w-100" id="swap">Swap Number</button>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <input
+              type="number"
+              class="form-control"
+              name="num_2"
+              id="num_2"
+              placeholder="Number 2"
+            />
+          </div>
+
+          <div id="msg" class="fw-bold"></div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#test-form").submit(function (e) {
+          e.preventDefault();
+          var num_1 = parseFloat($("#num_1").val());
+          var num_2 = parseFloat($("#num_2").val());
+          console.log(num_1);
+          console.log(num_2);
+          num_1 = eval(num_1+num_2);
+          num_2 = eval(num_1-num_2);
+          num_1 = eval(num_1-num_2);
+          $('#num_1').val(num_1)
+          $('#num_2').val(num_2)
+        });
+      });
+    </script>
+  </body>
+</html>

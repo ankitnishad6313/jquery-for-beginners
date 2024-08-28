@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Event</title>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(function () {
+        // $('#name').focus(function(){
+        //     var name = $(this).val().trim();
+
+        //     if(name.length < 3){
+        //         $(this).css('outline', '3px solid red');
+        //         $('#msg').html('Invalid Name');
+        //     }else{
+        //         $(this).css('outline', '3px solid green');
+        //         $('#msg').html('Valid Name');
+        //     }
+        // });
+
+        // $('#name').blur(function(){
+        //     var name = $(this).val().trim();
+
+        //     if(name.length > 3){
+        //         $(this).css('outline', '3px solid green');
+        //         $('#msg').html('Valid Name');
+        //     }
+        // });
+
+        $("#name").select(function () {
+          $("#msg").html($(this).val());
+        });
+
+        $("#city").change(function () {
+          var city = $(this).val();
+          if (city == "Lucknow" || city == "Gorakhpur" || city == "Basti") {
+            alert("valid City");
+          } else {
+            alert("Invalid City");
+          }
+          $("#city-val").html($(this).val());
+        });
+
+        $("#myform").submit(function (e) {
+          alert("submit button pressed");
+          e.preventDefault();
+        });
+      });
+      
+
+      setInterval(function getDate() {
+        var date = new Date();
+        var newDate = date.toLocaleTimeString()
+        var hour = newDate.split(":")[0];
+        if(hour < 10){
+            console.log(`0${newDate}`);
+            $("#msg").html(`0${newDate}`)
+        }else{
+            $("#msg").html(newDate)
+        }
+        // console.log(newDate);
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    <h2>jQuery Form Events</h2>
+    <ul>
+      <li>focus</li>
+      <li>blur</li>
+      <li>change</li>
+      <li>select</li>
+      <li>submit</li>
+    </ul>
+
+    <form action="" id="myform">
+      Name: <input type="text" name="name" id="name" />
+      <p id="msg"></p>
+      <br />
+      <br />
+      City:
+      <select name="city" id="city">
+        <option value="" disabled selected>Select City</option>
+        <option value="Lucknow">Lucknow</option>
+        <option value="Gorakhpur">Gorakhpur</option>
+        <option value="Basti">Basti</option>
+      </select>
+      <br />
+      <br />
+      <input type="submit" value="Submit" id="submit" />
+    </form>
+
+    <p id="city-val"></p>
+  </body>
+</html>

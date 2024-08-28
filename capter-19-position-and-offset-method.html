@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css" /> -->
+    <style>
+      #box {
+        min-height: 200px;
+        width: 50%;
+        margin: 0px auto;
+        border: 2px solid black;
+        padding: 50px 10px;
+        /* position: relative; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conatiner-fluid">
+      <h1 class="text-center">jQuery Position and Offset Method</h1>
+      <div class="col-8 mx-auto">
+        <strong>Position Methods</strong>
+        <p>
+          Position Return top and left value from its parent which have position relative.
+        </p>
+        <strong>Offset Methods</strong>
+        <p>
+          Offset Return top and left value from document(browser) edge.
+        </p>
+      </div>
+
+      <div id="box" class="mt-5">
+        <h2>This is a Heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+          mollitia pariatur est quo repudiandae id eum modi consequuntur,
+          blanditiis magni aperiam odit quaerat, consequatur rerum labore.
+          Voluptate minima natus fuga.
+        </p>
+      </div>
+
+      <div id="message" class="col-8 mx-auto my-3"></div>
+
+      <div class="col-5 mx-auto mt-3">
+        <button id="position" class="btn btn-outline-dark">Position</button>
+        <button id="offset" class="btn btn-outline-dark">Offset</button>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#position").click(function () {
+          var pos = '';
+          pos = $('#box h2').position();
+          console.log(pos);
+          $("#message").append("Top : " + pos.top + ", Left : " + pos.left);
+
+        });
+
+        $("#offset").click(function () {
+          var offs = "";
+          
+          offs = $('#box h2').offset();
+          // offs = $('#box h2').offset({top:0, left:10});
+          console.log(offs);
+          $("#message").append("<br> Top : " + offs.top + ", Left : " + offs.left);
+        });
+      });
+    </script>
+  </body>
+</html>

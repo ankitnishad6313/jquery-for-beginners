@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      #box {
+        height: 200px;
+        width: 200px;
+        background-color: teal;
+        position: absolute;
+        /* border: 2px solid black; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conatiner-fluid">
+    <h1 class="text-center">jQuery animate Method</h1>
+    <strong>animate()</strong> : animate() is used to animate an element. <br />
+    
+    <div id="box" class="my-3">
+      Lorem ipsum dolor sit amet.
+    </div>
+    <div class="col-5 mx-auto">
+      <button id="animate" class="btn btn-outline-dark">Animate</button>
+      <button id="reset" class="btn btn-outline-dark">Reset</button>
+    </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#animate').click(function(){
+          // $('#box').animate({height:'300px',width:'300px'},'slow');
+          // $('#box').animate({height:'300px',width:'300px'},'fast');
+          // $('#box').animate({height:'300px',width:'300px'},3000);
+          $('#box').animate({left:"300px", top:'500px',opacity:0.5, letterSpacing: "+=10px"});
+          $('#box').css({'background-color':'yellow'});
+
+        });
+        $('#reset').click(function(){
+          $('#box').animate({left:"0px", top:'80px'});
+        });
+      });
+    </script>
+  </body>
+</html>

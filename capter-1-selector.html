@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="./js/jquery.js"></script>
+    <script>
+        $(function(){
+
+        });
+    </script> -->
+  </head>
+  <body>
+    <h2>jQuery Selector</h2>
+
+    <p id="para">This is a Paragraph</p>
+    <p id="para1">This is a Paragraph</p>
+
+    <p class="para">This is another paragraph</p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+      accusantium modi, hic blanditiis ipsam laborum laudantium vel autem unde
+      fugiat deserunt corporis nobis impedit exercitationem quisquam iure.
+      Maiores, quas fuga.
+    </p>
+
+    <div style="background-color: aqua">
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <section>
+        <p>Paragraph 3</p>
+      </section>
+    </div>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+
+    <!-- <ul id="list1">
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+        <li>list 5</li>
+    </ul> -->
+
+    <ul class="list1">
+      <li>list 1</li>
+      <li>list 2</li>
+      <li>list 3</li>
+      <li>list 4</li>
+      <li>list 5</li>
+    </ul>
+
+    <ul class="list1">
+      <li>list 6</li>
+      <li>list 7</li>
+      <li>list 8</li>
+      <li>list 9</li>
+      <li>list 10</li>
+    </ul>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Gender</th>
+          <th>DOB</th>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr >
+          <td>Ram</td>
+          <td>ram@gmail.com</td>
+          <td>9876641235</td>
+          <td>Male</td>
+          <td>01-01-2001</td>
+        </tr>
+        <tr>
+          <td>Shyam</td>
+          <td>shyam@gmail.com</td>
+          <td>9876641235</td>
+          <td>Male</td>
+          <td>01-01-2001</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="abc.com" target="_blank">Abc</a>
+    <a href="eucoders.org" >Eucoder</a>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+      // $()
+      // jQuery()
+      $(document).ready(function () {
+        // "*" Universal Selector
+        // $('*').css('border','1px solid red');
+        // $("#para").css('color', 'blue');  // Id Selector
+        // $("#para, #para1").css('background-color', 'yellow'); // Group Selector
+        // $('.para').css('color', 'teal'); // Class selector
+        // $('p').css('border','10px groove red'); // Tag selector
+        // $('div p').css('color', 'blue'); // Descendant Selector
+        // $('div > p').css('color', 'red'); // Child Selector
+        // $('div + p').css('color', 'maroon'); // Adjacent Sibling Selector
+        // $('div ~ p').css('color', 'maroon'); // General Sibling Selector
+        // $("#list1 li:first-child").css('color', 'red');
+        // $("#list1 li:last-child").css('color', 'red');
+        // $("#list1 li:gt(1)").css('color', 'red');
+        // $("#list1 li:lt(3)").css('color', 'red');
+        // $("#list1 li:eq(3)").css('color', 'red');
+        // $(".list1 li:first").css('color', 'red');
+        // document.getElementsByClassName('list1');
+        // document.getElementById('list1')
+        // document.getElementsByTagName('p');
+        // $('.list1')
+
+        // $("table tbody tr td:odd").css('border', '1px solid red').css('color', 'blue');
+        $("table tbody tr td:odd").css({'border':'1px solid black', 'color':'red'});
+        $("table tbody tr td:even").css({'border':'1px solid red', 'color':'black'})
+
+        $("a[target='_blank']").hide();
+        $("a[target!='_blank']").hide();
+      });
+    </script>
+  </body>
+</html>

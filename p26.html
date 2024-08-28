@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <form action="" id="test-form" method="post">
+          <div class="mb-3">
+            <label for="string" class="form-label">String</label>
+            <input
+              type="text"
+              class="form-control"
+              name="string"
+              id="string"
+              placeholder="Enter your string"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="search" class="form-label">Search</label>
+            <input
+              type="text"
+              class="form-control"
+              name="search"
+              id="search"
+              placeholder="Enter your search Character...."
+            />
+          </div>
+
+          <div class="mb-3 text-center">
+            <input
+              type="submit"
+              value="Find"
+              class="btn btn-outline-dark w-50"
+            />
+          </div>
+
+          <div id="msg" class="fw-bold"></div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#test-form").submit(function (e) {
+          e.preventDefault();
+          var name = $("#string").val();
+          var search = $("#search").val();
+          $(this).trigger("reset");
+            
+          for (let index = 0; index < name.length; index++) {
+            const element = name[index];
+            console.log(element);
+            if (element.toUpperCase() === search.toUpperCase()) {
+            $("#msg").text(search + " is exist in " + name + " at " + ++index + " Position.");
+            } else {
+                $("#msg").text(search + " is not exist in " + name);
+            }
+            break;
+          }         
+        });
+      });
+    </script>
+  </body>
+</html>

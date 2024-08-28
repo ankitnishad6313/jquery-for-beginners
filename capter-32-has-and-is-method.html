@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="row mx-5">
+      <h2 class="text-center">jQuery has() and is() Method</h2>
+      <h3>.has() Method</h3>
+      <p>The .has() method is used to filter elements by checking if they contain a
+        descendant that matches a selector.</p>
+
+      <h3>.is() Method</h3>
+      <p>The .is() method is used to check whether at least one of the elements in
+        the jQuery object matches a given selector, element, or function.</p>
+        
+      <h3>Key Differences:</h3>
+      <ul>
+        <li>
+          .has() filters the set of matched elements to those that contain a
+          specified descendant.
+        </li>
+        <li>
+          .is() tests the elements to see if they match a certain condition,
+          returning true or false.
+        </li>
+      </ul>
+      <div class="col-8" id="box">
+        <p class="test">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+          nesciunt minus voluptates veritatis amet tenetur ullam, similique
+          earum dolorum ea fugit, consequatur hic rerum officiis tempora
+          corporis magni expedita ipsum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit <span>amet consectetur, adipisicing elit</span>.
+          Perferendis, blanditiis nihil! Suscipit facere voluptatum tempore
+          quas? Impedit, consectetur suscipit. Eius neque expedita eveniet et
+          accusamus odit quasi illum omnis esse!
+        </p>
+        <ul>
+          <li>List 1</li>
+          <li>List 2</li>
+          <li><span>List 3</span></li>
+          <li>List 4</li>
+        </ul>
+      </div>
+    </div>
+
+    <p id="test">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+      dolorem qui ipsam nisi aut aliquam, deleniti
+      <b class="test">saepe pariatur recusandae temporibus</b> similique
+      voluptate labore repellendus ab nobis itaque ullam eum assumenda.
+    </p>
+
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo a, at
+      ullam molestias animi ipsa quia necessitatibus, laudantium rem repudiandae
+      dolorem magni soluta, minima architecto eos quibusdam incidunt. Facilis,
+      recusandae.
+    </p>
+
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("p").has(".test,span").css("background-color", "teal");
+
+        if ($("#test").parent().is("div")) {
+          console.log($("#test").parent().is("div"));
+        } else {
+          console.log($("#test").parent().is("div"));
+        }
+      });
+    </script>
+  </body>
+</html>

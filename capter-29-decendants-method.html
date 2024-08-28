@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        #main-outer{
+            background-color: blueviolet;
+        }
+        #outer{
+            background-color: burlywood;
+        }
+        #inner{
+            background-color: teal;
+        }
+        #inner .col{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="row mx-5">
+        <h2 class="text-center">jQuery children() and find() Methods</h2>
+        <div id="main-outer" class="p-4">
+            <h2 class="test">Main Outer</h2>
+            <h2 class="">Another Heading</h2>
+            <div id="outer" class="p-4 test">
+                <h2>Outer</h2>
+                <div id="inner" class="row p-4 d-flex">
+                    <h2>Inner</h2>
+                    <div class="col  p-5 mx-2 justify-content-center align-items-center">A</div>
+                    <div class="col  p-5 mx-2 justify-content-center align-items-center">B</div>
+                    <div id="div-c" class="col p-5 mx-2 justify-content-center align-items-center">C</div>
+                    <div class="col p-5 mx-2 justify-content-center align-items-center">D</div>
+                    <div class="col p-5 mx-2 justify-content-center align-items-center">E</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('#main-outer').children().css('background-color', 'lime');
+        // $('#main-outer').children('h2').css('background-color', 'lime');
+        // $('#main-outer').children('h2.test').css('background-color', 'lime');
+        // $('#main-outer').find('div#div-c').css('background-color', 'lime');
+        });
+    </script>
+</body>
+</html>

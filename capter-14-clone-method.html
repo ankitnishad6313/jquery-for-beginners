@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        #box{
+            height: 400px;
+            width: 600px;
+            padding: 20px;
+            border: 1px double teal;
+            margin: 0px 10px;
+    }
+    #box2{
+            height: 400px;
+            width: 600px;
+            padding: 20px;
+            border: 1px double teal;
+    }
+    </style>
+</head>
+<body>
+    <h2>jQuery after & before Methods</h2>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur maiores explicabo qui ab!</p>
+    </div>
+
+    <div id="box2">
+
+    </div>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box h2').clone().prependTo('#box2');
+            $('#box p').clone().appendTo('#box2');
+        });
+    </script>
+</body>
+</html>

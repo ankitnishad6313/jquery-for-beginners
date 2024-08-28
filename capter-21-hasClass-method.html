@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      #box {
+        min-height: 200px;
+        width: 50%;
+        margin: 0px auto;
+        border: 2px solid black;
+        padding: 50px 10px;
+        /* position: relative; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="conatiner-fluid"> -->
+      <h1 class="text-center">jQuery hasClass Method</h1>
+      <div class="col-8 mx-auto">
+        <strong>has Methods</strong>
+        hasClass() return true and false if given class exists inside the targeted elements.
+      </div>
+
+      <div id="box" class="mt-5">
+        <h2>This is a Heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+          mollitia pariatur est quo repudiandae id eum modi consequuntur,
+          blanditiis magni aperiam odit quaerat, consequatur rerum labore.
+          Voluptate minima natus fuga.
+        </p>
+      </div>
+      <div id="box2" class="mt-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident id labore nemo, quas voluptates error, voluptatum explicabo nobis hic reiciendis esse? Exercitationem esse quod veniam quas id voluptate, odit quam!</p>
+        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quidem facilis molestias architecto distinctio magni impedit ducimus quaerat quo, quas dolorem est officiis earum doloribus veniam possimus. At, qui quaerat?</span>
+      </div>
+
+      <div class="col-5 mx-auto mt-3">
+        <button id="check" class="btn btn-outline-dark">Check</button>
+      </div>
+    <!-- </div> -->
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#check").click(function () {
+          // $('div:has(span)').css('border', '1px solid red');
+          // $('div:not(:has(span))').css('border', '1px solid teal');
+
+        if(($('h1').hasClass('mt-4')) == true){
+          $('h1').css('color', 'red');
+        }else{
+          $('h1').css('background-color', 'red');
+        }
+
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container fluid">
+      <div class="row">
+        <h2 class="text-center">Sum of digits of given number.</h2>
+        <div class="col-lg-8 mx-auto">
+          <form action="" id="test-form" method="post">
+            <div class="mb-3">
+              <label for="number" class="form-label">Enter number</label>
+              <input
+                type="number"
+                min="1"
+                class="form-control"
+                name="number"
+                id="number"
+                placeholder="Enter number"
+              />
+            </div>
+
+            <div class="mb-3 text-center">
+              <input
+                type="submit"
+                value="Calculate"
+                class="btn btn-outline-dark w-50"
+              />
+            </div>
+
+            <div id="msg" class="fw-bold"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#test-form").submit(function (e) {
+          e.preventDefault();
+          var number = $("#number").val();
+          var temp_num = number;
+          $(this).trigger("reset");
+          var sum = 0;
+          for (let index = 1; index <= number.length; index++) {
+            sum += temp_num % 10;
+            temp_num = Math.trunc(temp_num / 10);
+          }
+          $("#msg").text(`Sum of digits of ${number} = ${sum}`);
+        });
+      });
+    </script>
+  </body>
+</html>

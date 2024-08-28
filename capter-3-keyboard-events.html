@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>jQuery Keyboard Events</h2>
+    <ul>
+        <li>keyup</li>
+        <li>keydown</li>
+        <li>keypress</li>
+    </ul>
+    <input type="text" name="name" id="name">
+    <p id="para"></p>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('#name').keydown(function(){
+            //     var val = $(this).val();
+            //     console.log(val);
+            // });
+
+            // $('#name').keypress(function(){
+            //     var val = $(this).val();
+            //     console.log(val);
+            // });
+
+            $('#name').keyup(function(){
+                var val = $(this).val();
+                console.log(val);
+                $('#para').html(val);
+            });
+        });
+    </script>
+</body>
+</html>

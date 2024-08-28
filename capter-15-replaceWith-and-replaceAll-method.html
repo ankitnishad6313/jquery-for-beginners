@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *::selection{
+        background-color: black;
+        color: red;
+      }
+      #box {
+        min-height: 200px;
+        width: 600px;
+        padding: 20px;
+        border: 1px double teal;
+        margin: 0px 10px;
+      }
+      #box2 {
+        height: 200px;
+        width: 600px;
+        padding: 20px;
+        border: 1px double teal;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>jQuery replaceWith() & replaceAll() Methods</h2>
+
+    <div id="box">
+      <h2>H2 Heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab! dfcgvbhjnkl
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+    </div>
+
+    <button id="replaceWith">replaceWith</button>
+    <button id="replaceAll">replaceAll</button>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#replaceWith").click(function () {
+          // $("#box h2").replaceWith("<p>H2 replaced by Paragraph Tag</p>");
+          $("#box h2").replaceWith("This is a normal content");
+        });
+        $("#replaceAll").click(function () {
+            $('<h2>replaced by H2 Heading</h2>').replaceAll('#box p');
+        });
+      });
+    </script>
+  </body>
+</html>

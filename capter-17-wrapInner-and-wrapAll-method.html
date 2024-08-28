@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        min-height: 200px;
+        width: 600px;
+        padding: 20px;
+        border: 1px double teal;
+        margin: 0px 10px;
+      }
+      span{
+        background-color: teal;
+        color: white;
+      }
+
+      h6{
+        background-color: black;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>jQuery wrapInner() & wrapAll() Methods</h2>
+
+    <div id="box">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab! dfcgvbhjnkl
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+    </div>
+
+    <button id="wrapInner">wrapInner</button>
+    <button id="wrapAll">wrapAll</button>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#wrapInner").click(function () {
+          $('#box p').wrapInner('<span></span>')
+        });
+        $("#wrapAll").click(function () {
+          $('#box p').wrapAll('<h2></h2>');
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>jQuery on & off Methods</h2>
+
+    Name: <input type="text" name="" id="name">
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('#name').focus(function(){
+            //     $(this).css('outline', '2px solid green');
+            // });
+
+            // $('#name').keyup(function(){
+            //     name =$(this).val();
+            //     if(name.length < 3){
+            //         $(this).css('outline', '2px solid red');
+            //     }else{
+            //         $(this).css('outline', '2px solid yellow');
+            //     }
+            // });
+
+            $('#name').on({
+                "focus" : function(){
+                $(this).css('outline', '2px solid green');
+
+                },
+                "keyup" : function(){
+                    name =$(this).val();
+                    if(name.length < 3){
+                        $(this).css('outline', '2px solid red');
+                    }else{
+                        $(this).css('outline', '2px solid yellow');
+                    }
+                },
+                "blur" : function(){
+                    $(this).css('background-color', 'red');
+                }
+            });
+
+            $('#name').off('focus blur');
+        });
+    </script>
+</body>
+</html>

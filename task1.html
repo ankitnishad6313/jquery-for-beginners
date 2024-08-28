@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <form action="" id="test-form" method="post">
+          <div class="mb-3">
+            <label for="day" class="form-label">Enter number of Days</label>
+            <input
+              type="number"
+              min="1"
+              class="form-control"
+              name="day"
+              id="day"
+              placeholder="Enter number of Days"
+            />
+          </div>
+
+          <div class="mb-3 text-center">
+            <input
+              type="submit"
+              value="Calculate"
+              class="btn btn-outline-dark w-50"
+            />
+          </div>
+
+          <div id="msg" class="fw-bold"></div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#test-form").submit(function (e) {
+          e.preventDefault();
+          var day = $("#day").val();
+          $(this).trigger("reset");
+            year = Math.trunc(day/365);
+            months = Math.trunc((day%365)/30);
+            week = Math.trunc((day%365)%30/7);
+            days = Math.trunc(((day%365)%30)%7);
+          $("#msg").text(`There are ${year} Year, ${months} Months, ${week} Weeks and ${days} Days in ${day} days.`);
+        });
+      });
+    </script>
+  </body>
+</html>

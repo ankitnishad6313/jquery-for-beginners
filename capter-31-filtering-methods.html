@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      #main-outer {
+        background-color: blueviolet;
+      }
+      #outer {
+        background-color: burlywood;
+      }
+      #inner {
+        background-color: teal;
+      }
+      #inner .col {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row mx-5">
+      <h2 class="text-center">jQuery filtering Methods</h2>
+      <div class="p-4">
+        <ul>
+          <li>PHP</li>
+          <li>Python</li>
+          <li>Laravel</li>
+          <li>C</li>
+          <li>Java</li>
+        </ul>
+
+        <p id="test">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          dolorem qui ipsam nisi aut aliquam, deleniti
+          <b class="test">saepe pariatur recusandae temporibus</b> similique
+          voluptate labore repellendus ab nobis itaque ullam eum assumenda.
+        </p>
+
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo a,
+          at ullam molestias animi ipsa quia necessitatibus, laudantium rem
+          repudiandae dolorem magni soluta, minima architecto eos quibusdam
+          incidunt. Facilis, recusandae.
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        // $('ul li').first().css('background-color', 'teal')
+        // $('ul li').last().css('background-color', 'teal')
+        // $('ul li').eq(2).css('background-color', 'teal')
+        // $('ul li').slice().css('background-color', 'teal')
+        // $('ul li').slice(1,4).css('background-color', 'teal')
+        // $("p").not(".test").css("background-color", "red");
+
+        $("ul li").each(function () {
+          // console.log($(this).text());
+          $(this).text("Hello");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <form action="" id="test-form" method="post">
+          <div class="mb-3">
+            <label for="number" class="form-label">Enter number to Find Factorial</label>
+            <input
+              type="number"
+              class="form-control"
+              name="number"
+              id="number"
+              placeholder="Enter number of Days"
+            />
+          </div>
+
+          <div class="mb-3 text-center">
+            <input
+              type="submit"
+              value="Factorial"
+              class="btn btn-outline-dark w-50"
+            />
+          </div>
+
+          <div id="msg" class="fw-bold"></div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#test-form").submit(function (e) {
+          e.preventDefault();
+          var number = $("#number").val();
+          $(this).trigger("reset");
+          function fact(n) {
+            return (n == 0 || n == 1) ? 1 : n * fact(n-1);
+          }
+          $("#msg").text(`Factorial of ${number} =  ${fact(number)}.`);
+        });
+      });
+    </script>
+  </body>
+</html>

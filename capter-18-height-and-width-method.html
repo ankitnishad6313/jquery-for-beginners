@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      #box {
+        min-height: 200px;
+        width: 50%;
+        margin: 0px auto;
+        border: 2px solid black;
+        padding: 50px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conatiner-fluid">
+      <h1 class="text-center">jQuery Height and Width Method</h1>
+      <div class="col-8 mx-auto">
+        <strong>Width Methods</strong>
+        <li>width() // Return Content width</li>
+        <li>innerWidth() // Return Content width + padding (top + bottom)</li>
+        <li>
+          outerWidth() // Return Content width + padding (top + bottom) + Border
+          width (top + bottom)
+        </li>
+        <li>
+          outerWidth(true) // Return Content width + padding (top + bottom) +
+          Border width (top + bottom) + margin (top + bottom)
+        </li>
+
+        <strong>Height Methods</strong>
+        <li>height() // Return Content height</li>
+        <li>innerHeight() // Return Content Height + padding (left + right)</li>
+        <li>
+          outerHeight() // Return Content Height + padding (left + right) +
+          Border Height (left + right)
+        </li>
+        <li>
+          outerHeight(true) // Return Content Height + padding (left + right) +
+          Border Height (left + right) + margin (left + right)
+        </li>
+      </div>
+
+      <div id="box" class="mt-5">
+        <h2>This is a Heading</h2>
+        <p style="padding: 10px; border: 10px solid grey; margin-left: 15px">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+          mollitia pariatur est quo repudiandae id eum modi consequuntur,
+          blanditiis magni aperiam odit quaerat, consequatur rerum labore.
+          Voluptate minima natus fuga.
+        </p>
+      </div>
+
+      <div id="message" class="col-8 mx-auto my-3"></div>
+
+      <div class="col-5 mx-auto mt-3">
+        <button id="height" class="btn btn-outline-dark">Height</button>
+        <button id="width" class="btn btn-outline-dark">Width</button>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#height").click(function () {
+          var height_val = "";
+          height_val += "Height: " + $("#box p").height() + "px, ";
+          height_val += "Inner Height: " + $("#box p").innerHeight() + "px, ";
+          height_val += "Outer Height: " + $("#box p").outerHeight() + "px, ";
+          height_val +=
+            "Outer Height(true): " + $("#box p").outerHeight(true) + "px, ";
+          $("#message").append(height_val);
+        });
+        $("#width").click(function () {
+          var width_val = "";
+          width_val += "Width: " + $("#box p").width() + "px, ";
+          width_val += "Inner Width: " + $("#box p").innerWidth() + "px, ";
+          width_val += "Outer Width: " + $("#box p").outerWidth() + "px, ";
+          width_val +=
+            "Outer Width(true): " + $("#box p").outerWidth(true) + "px, ";
+          $("#message").append(width_val);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>jQuery Mouse Events</h2>
+    <ul>
+        <li id="click">Click Event</li>
+        <li id="dblclick">Double Click</li>
+        <li id="mouseenter">Mouse Enter</li>
+        <li>Mouse Out</li>
+    </ul>
+
+
+    <details>
+        <summary>Hover Me</summary>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, nostrum voluptatem commodi voluptatum earum beatae porro recusandae exercitationem consequuntur. Impedit rem nisi explicabo non tempore enim reiciendis officiis voluptates? Eos.
+    </details>
+
+    <input type="text" name="" id="">
+    <input type="button" name="" id="" value="Button">
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#click').click(function(){
+                $(this).css({
+                   'color':'blue',
+                   'font-size': '30px' 
+                });
+            });
+
+            $('#dblclick').click(function(){
+                $(this).css({
+                   'background-color':'blue',
+                   'border': '3px solid red' 
+                });
+            });
+
+            $('#mouseenter').mouseenter(function(){
+                $(this).css({
+                   'color':'maroon',
+                   'border': '3px solid red' 
+                });
+            });
+            $('#mouseenter').mouseleave(function(){
+                $(this).css({
+                   'color':'teal',
+                   'border': '3px solid black' 
+                });
+            });
+
+            $('details').click(function(){
+                $('summary').css('color','red')
+            });
+
+            $(":text").val("Some text");
+            $(":button").val("Submit").css({
+                'border':'2px solid red',
+                'padding':'5px 10px', 
+                'border-radius':'8px', 
+                'background-color':'black', 
+                'color':'white'
+            });
+
+            $(document).contextmenu(function(e){
+                alert('Right button pressed');
+                e.preventDefault();
+                alert('Right click Disabled');
+
+            });
+        });
+    </script>
+</body>
+</html>

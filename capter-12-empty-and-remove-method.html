@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        min-height: 200px;
+        width: 600px;
+        padding: 20px;
+        border: 1px double teal;
+        margin: 0px 10px;
+      }
+      #box2 {
+        height: 200px;
+        width: 600px;
+        padding: 20px;
+        border: 1px double teal;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>jQuery empty() & remove() Methods</h2>
+
+    <div id="box">
+      <h2>Heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab! dfcgvbhjnkl
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        incidunt fuga molestiae consequatur quidem ipsa, perspiciatis ad iste
+        voluptatem inventore cumque quaerat blanditiis mollitia minus aspernatur
+        maiores explicabo qui ab!
+      </p>
+    </div>
+
+    <div id="box2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+      corrupti iure est officiis excepturi distinctio eaque, sapiente inventore
+      natus doloremque exercitationem voluptas cum, quidem eligendi! Optio est
+      saepe aliquam libero.
+    </div>
+
+    <button id="empty">Empty</button>
+    <button id="remove">Remove</button>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#empty").click(function () {
+        //   $("#box").empty();
+        //   $("#box:nth-child(2)").remove();
+        });
+        $("#remove").click(function () {
+            $("#box:nth-child(2)").css('background-color:red');
+        //   $("#box").remove();
+        });
+      });
+    </script>
+  </body>
+</html>

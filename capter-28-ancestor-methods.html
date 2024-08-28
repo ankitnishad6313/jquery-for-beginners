@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css" /> -->
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <h2>jquery Ancestor method</h2>
+        <ul>
+          <li>parent()</li>
+          <li>parents()</li>
+          <li>parentsUntil()</li>
+          <li>offsetParent()</li>
+          <li>closest()</li>
+        </ul>
+        <div id="main-outer" class="p-3 box" style="background-color: aqua">
+          <h3>Main Outer</h3>
+          <div id="outer" class="p-3 box" style="background-color: darkgray ; position: relative;">
+            <h3>Outer</h3>
+            <div id="inner" class="row box" style="background-color: teal">
+              <h3>Inner</h3>
+              <span
+                id="a"
+                class="col"
+                style="background-color: rgb(147, 186, 186)"
+              >
+                A
+              </span>
+              <div id="b" class="col" style="background-color: blueviolet">
+                <span>Span 1</span>
+                <span>Span 2</span>
+                B
+              </div>
+              <div id="c" class="col" style="background-color: brown">C</div>
+              <div id="d" class="col" style="background-color: cadetblue">
+                D
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        // $('#b').parent().css({'background-color' : 'red'});
+        // $('#b').parents().css({'background-color' : 'red'});
+        // $('#b').parentsUntil('#main-outer').css({'background-color' : 'red'});
+        // $('#b').offsetParent().css({'background-color' : 'red'});
+        $('#b').closest('.box').css({'background-color' : 'red'});
+      });
+    </script>
+  </body>
+</html>
